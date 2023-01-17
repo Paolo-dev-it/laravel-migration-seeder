@@ -15,7 +15,7 @@ class CreateTrainsTable extends Migration
     {
         Schema::create('trains', function (Blueprint $table) {
             $table->id();
-            $table->smallInteger('train_number', 20);
+            $table->smallInteger('train_number');
             $table->string('destination', 100);
             $table->dateTime('departure_time');
             $table->timestamps();
