@@ -3,25 +3,29 @@
 @section('title - page', 'Home - Trains')
 
 @section('main - content')
+    <div class="mt-3">
+        <h1 class="text-center"> Trains timetable</h1>
+        <div class="container">
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <th scope="col">Numero treno</th>
+                        <th scope="col">Destinazione</th>
+                        <th scope="col">Data e orario di partenza</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($trains as $elem)
+                        <tr>
+                            <td>{{ $elem->train_number }}</td>
+                            <td>{{ $elem->destination }}</td>
+                            <td>{{ $elem->departure_time }}</td>
+                        </tr>
+                </tbody>
+                @endforeach
+            </table>
+        </div>
+    </div>
 
-    @foreach ($trains as $elem)
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Numero treno</th>
-                    <th scope="col">Destinazione</th>
-                    <th scope="col">Orario di partenza</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-
-                    <td>{{ $elem->train_number }}</td>
-                    <td>{{ $elem->destination }}</td>
-                    <td>{{ $elem->departure_time }}</td>
-                </tr>
-            </tbody>
-        </table>
-    @endforeach
 
 @endsection
